@@ -18,19 +18,30 @@ UTM 上に自分で AlmaLinux をインストールした場合、`httpd` は標
 
    ```
 
-2. Apache をインストール
+2. **Apache をインストール**
+
+   ```bash
    sudo dnf install httpd
 
-3. サービスを起動
+   ```
+
+3. **サービスを起動**
+
+   ```bash
    sudo systemctl start httpd
 
-4. 自動起動を有効化（任意）
-   sudo systemctl enable httpd
-
-5. サービス状態の確認
-   systemctl status httpd
-
    ```
+
+4. **自動起動を有効化（任意）**
+
+   ```bash
+   sudo systemctl enable httpd
+   ```
+
+5. **サービス状態の確認**
+
+   ```bash
+   systemctl status httpd
 
    ```
 
