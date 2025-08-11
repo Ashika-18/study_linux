@@ -108,7 +108,7 @@ Linux マシンが手元にない場合、SSH でリモートログインして�
 
 事前に Linux で ip a コマンドを実行し、ログイン先の IP アドレスを確認する
 
-![Alt text](images/ip_a.png)
+![Alt text](images/ip_a_.png)
 
 仮想マシンにはネットワークアダプターが 2 つ設定されている
 
