@@ -710,3 +710,168 @@ find: ‘/etc/lvm/devices’: 許可がありません
 アクセス許可がないディレクトリではエラーが表示されますが、指定したファイル名を持つファイルの場所が表示されます。
 
 ---
+
+## 2-15 コマンドのパスを表示（which コマンド）
+
+- コマンドはプログラムであり、通常は `/bin` や `/sbin` などのディレクトリに配置されている。
+- コマンド実行時にプログラムの配置場所を意識する必要がないのは、`PATH` 環境変数にプログラムのあるディレクトリが設定されているため。
+- `which` コマンドを使うと、指定したコマンドが `PATH` に含まれるどのディレクトリにあるかを確認できる。
+
+書式
+
+which コマンド名
+
+以下の実行例では、cat コマンドがどのディレクトリにあるのかを調べています。
+
+```bash
+
+$ which cat
+
+/usr/bin/cat
+
+```
+
+cat コマンドを実行すると、/usr/bin/cat が呼び出されているのがわかります。
+
+---
+
+# 2-15-1 環境変数 PATH の設定確認
+
+- 環境変数 PATH に設定された値を表示するには、`echo`コマンドを使用する。
+- 環境変数名の前に`$`を付けることで、その値を参照できる。
+
+### 書式
+
+```bash
+
+$ echo $PATH
+
+/home/linuc/.local/bin:/home/linuc/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+
+```
+
+PATH に設定された複数のディレクトリがコロン（:）で区切られて表示される。
+
+---
+
+# 2-16 コマンドのヘルプを表示する
+
+- 多くのコマンドはヘルプ情報を持っている。
+- コマンドに`--help`オプションを付けて実行することでヘルプを表示できる。
+
+### 書式
+
+コマンド --help
+
+```bash
+
+$ ls --help
+使用法: ls [オプション]... [ファイル]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+（略）
+
+```
+
+---
+
+# 2-17 マニュアルの使い方
+
+- Linux にはオンラインマニュアル（man コマンド）が用意されている。
+- `man`コマンドで指定したコマンドの詳細なマニュアルを参照できる。
+
+### 書式
+
+man [セクション] コマンド名
+
+実行例
+
+```bash
+
+$ man ls
+
+```
+
+マニュアルの主な見出し
+SYNOPSIS（書式）
+コマンドの基本的な書式を示す。
+
+DESCRIPTION（説明）
+コマンドの詳細やオプションの解説。
+
+OPTIONS
+コマンドで使えるオプション一覧。
+
+SEE ALSO（関連事項）
+関連コマンドや参考情報の一覧。
+
+SEE ALSO の項目はさらに man コマンドで調べることができる。
+
+---
+
+## 2-17-1 マニュアルのセクション
+
+- マニュアルのセクションは、マニュアルを種類ごとに分類したもの。
+- `ls`コマンドのマニュアル先頭の「LS(1)」は、`ls`がセクション 1 に属していることを示す。
+
+### マニュアルのセクション一覧
+
+| セクション番号 | 内容                       |
+| -------------- | -------------------------- |
+| 1              | ユーザコマンド             |
+| 2              | システムコール             |
+| 3              | システムライブラリや関数   |
+| 4              | デバイスやデバイスドライバ |
+| 5              | ファイルの形式             |
+| 6              | ゲームやデモなど           |
+| 7              | その他                     |
+| 8              | システム管理系のコマンド   |
+| 9              | カーネルなどの情報         |
+
+---
+
+## 2-17-2 セクションを指定したマニュアルの表示
+
+- 同じ名前のマニュアルが複数のセクションに分かれている場合がある。
+- 例：`passwd`はセクション 1（ユーザコマンド）とセクション 5（設定ファイル）にマニュアルがある。
+
+### 書式
+
+man [セクション番号] コマンド名
+
+```bash
+
+$ man passwd
+
+PASSWD (1) General Commands Manual PASSWD (1)
+
+名前
+passwd - ユーザパスワードを変更する
+
+書式
+passwd [-k] [-l] [-u [-f]] [-d] [-e] [-n mindays] [-x maxdays] [-w
+warndays] [-i inactivedays] [-S] [--stdin] [username]
+（ 略）
+
+```
+
+セクション 5 の passwd のエントリを見るには、セクション番号をオプションとして指定します。
+
+```bash
+
+$ man 5 passwd
+passwd (5) File Formats Manual passwd (5)
+NAME
+passwd - password file
+DESCRIPTION
+The /etc/passwd file is a text file that describes user login accounts
+for the system. It should have read permission allowed for all users
+(many utilities , like ls(1) use it to map user IDs to usernames), but
+write access only for the superuser.
+（ 略）
+
+```
+
+passwd ファイルの書式について説明したマニュアルが表示されました。
+
+---
