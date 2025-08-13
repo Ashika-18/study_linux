@@ -563,3 +563,119 @@ cptest moto mvtest
 moto ディレクトリが saki ディレクトリ内に移動したことがわかります。
 
 ---
+
+### 2-11-3 ファイル名の変更
+
+移動元がファイルで、移動先に存在しないファイル名を指定すると、ファイル名が変更されます。
+
+```bash
+$ ls
+aru cptest hosts saki services
+$ mv cptest renametest
+$ ls
+aru hosts renametest saki services
+
+```
+
+cptest ファイルが renametest に名前変更されたことが確認できます。
+
+---
+
+### 2-11-4 ディレクトリ名の変更
+
+移動元がディレクトリで、移動先に存在しないディレクトリ名を指定すると、ディレクトリ名が変更されます。
+
+```bash
+
+$ mv saki renamedir
+$ ls
+aru hosts renamedir renametest services
+
+```
+
+saki ディレクトリが renamedir に名前変更されたことが確認できます。
+
+---
+
+## 2-12 ファイルの削除 (rm コマンド)
+
+`rm` (ReMove) コマンドはファイルやディレクトリを削除するために使用します。
+
+### 書式
+
+```bash
+rm [オプション] ファイル名
+
+```
+
+主なオプション
+-f
+強制的に削除を実行します。削除の確認を行わずに実行します。
+
+-i
+削除前に確認を求めます。誤削除防止に便利です。
+
+-r
+ディレクトリを再帰的に削除します。ディレクトリ内のファイルやサブディレクトリも含めて削除します。
+
+実例
+現在の作業ディレクトリと中身を確認します。
+
+```bash
+
+$ pwd
+/home/linuc/work
+
+$ ls
+aru hosts renamedir renametest services
+
+$ ls renamedir
+cptest moto mvtest
+
+```
+
+renametest ファイルを削除します。
+
+```bash
+
+$ rm renametest
+
+$ ls
+aru hosts renamedir services
+
+```
+
+renamedir ディレクトリを削除します。（削除コマンドは続く）
+
+### ディレクトリの削除と注意点
+
+通常の `rm` コマンドではディレクトリを削除できません。
+
+```bash
+$ rm renamedir
+rm: 'renamedir' を削除できません: ディレクトリです
+
+```
+
+ディレクトリ内にファイルやサブディレクトリがあるため、削除できません。
+
+その場合は -r オプションを使って再帰的に削除します。
+
+```bash
+
+$ rm -r renamedir/
+$ ls
+aru hosts services
+
+```
+
+renamedir ディレクトリが中身ごと一括で削除されました。
+
+---
+
+## 2-13 削除したファイルは復元できない
+
+Linux では、一度削除したファイルを復元することはできません。
+特に -f オプション（確認なしの強制削除）や -r オプション（ディレクトリごと削除）を使う場合は、誤削除に十分注意が必要です。
+
+---
