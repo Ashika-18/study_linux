@@ -605,8 +605,11 @@ a.b : a と b の間に1文字
 - **単純な文字列検索**
 
   - 正規表現を使わずに検索条件を指定すると文字列そのものを検索できる
-  - 例: `cat /etc/services | grep http`
-    ```
+
+    ```bash
+
+    cat /etc/services | grep http`
+
     # http :// www.iana.org/assignments/port-numbers
     http 80/ tcp www www-http # WorldWideWeb HTTP
     http 80/ udp www www-http # HyperText Transfer Protocol
@@ -616,14 +619,19 @@ a.b : a と b の間に1文字
     https 443/ sctp # http protocol over TLS/SSL
     gss-http 488/ tcp
     gss-http 488/ udp
+
     ```
+
     → `http` を含む行を抽出
 
 - **行頭の文字列指定**
 
   - `^` を先頭に付けると、特定文字列で始まる行だけを抽出できる
-  - 例: `cat /etc/services | grep ^http`
-    ```
+
+  ```bash
+
+    cat /etc/services | grep ^http
+
     http 80/ tcp www www-http # WorldWideWeb HTTP
     http 80/ udp www www-http # HyperText Transfer Protocol
     http 80/ sctp # HyperText Transfer Protocol
@@ -632,13 +640,19 @@ a.b : a と b の間に1文字
     https 443/ sctp # http protocol over TLS/SSL
     http-mgmt 280/ tcp # http-mgmt
     http-mgmt 280/ udp # http-mgmt
-    ```
-    → `http` で始まる行を抽出
+
+  ```
+
+  → `http` で始まる行を抽出
 
 - **行末の文字列指定**
+
   - `$` を末尾に付けると、特定文字列で終わる行だけを抽出できる
-  - 例: `cat /etc/services | grep http$`
-    ```
+
+  ```bash
+
+    cat /etc/services | grep http$
+
     md-cg-http 2688/ tcp # md-cf-http
     md-cg-http 2688/ udp # md-cf-http
     webemshttp 2851/ tcp # webemshttp
@@ -647,5 +661,9 @@ a.b : a と b の間に1文字
     plysrv-http 6770/ udp # PolyServe http
     manyone-http 8910/ tcp # manyone-http
     manyone-http 8910/ udp # manyone-http
-    ```
-    → `http` で終わる行だけを抽出
+
+  ```
+
+  → `http` で終わる行だけを抽出
+
+---
