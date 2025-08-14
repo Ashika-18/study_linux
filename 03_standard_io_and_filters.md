@@ -291,3 +291,311 @@ $ ls -R /etc 2>&1 | less
 - 2>&1 を使わないとエラーメッセージがスクロールで消えてしまうことがある
 
 ---
+
+## 3-5 データの先頭や末尾の表示 (head / tail)
+
+- `head` コマンド：データの先頭を表示（デフォルト 10 行）
+- `tail` コマンド：データの末尾を表示（デフォルト 10 行）
+- 行数を指定する場合は `-n 行数` オプションを使用
+
+### 例
+
+```bash
+# /etc/services の先頭5行を表示
+$ cat -n /etc/services | head -n 5
+1  # /etc/services:
+2  # $Id: services ,v 1.49 2017/08/18 12:43:23 ovasik Exp $
+3  #
+4  # Network services , Internet style
+5  # IANA services version: last updated 2016 -07 -08
+
+# /etc/services の末尾10行を表示（デフォルト）
+$ tail /etc/services
+
+# 末尾から5行を表示
+$ tail -n 5 /etc/services
+
+```
+
+### 例（末尾の一部を表示）
+
+```bash
+
+# /etc/services の末尾5行を表示（-行数オプション指定）
+$ cat -n /etc/services | tail -5
+11469  axio-disc       35100/udp    # Axiomatic discovery protocol
+11470  pmwebapi        44323/tcp    # Performance Co-Pilot client HTTP API
+11471  cloudcheck-ping 45514/udp    # ASSIA CloudCheck WiFi Management keepalive
+11472  cloudcheck      45514/tcp    # ASSIA CloudCheck WiFi Management System
+11473  spremotetablet  46998/tcp    # Capture handwritten signatures
+
+```
+
+---
+
+## 3-6 テキストファイルのソート（sort コマンド）
+
+sort コマンドはデータを指定した条件で並べ替え（ソート）します。
+
+### 書式
+
+sort [オプション] [ファイル]
+
+主なオプション
+
+```bash
+
+-k n : n 列目のデータでソート
+
+-t 文字列 : 列の区切り文字を指定（デフォルトは空白）
+
+-n : 数値としてソート
+
+-r : 逆順でソート
+
+```
+
+---
+
+## 6.6.1 ソート用データの確認
+
+- Linux のユーザー情報が記載されている /etc/passwd を使用します。
+
+- 末尾 5 行を表示してデータを確認します。
+
+```bash
+
+$ tail -5 /etc/passwd
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
+dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
+
+```
+
+先頭がユーザー名、3 番目がユーザー ID 番号です。これらのデータを使ってどのようにソートが変わるのか確認します。
+
+---
+
+## 3-6-2 単純なソート
+
+ユーザー名（1 列目）をアルファベット順にソートします。
+
+```bash
+
+$ tail -5 /etc/passwd | sort
+chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
+dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+
+```
+
+結果はユーザー名のアルファベット順に並んでいる。
+
+---
+
+## 3-6-3 逆順のソート
+
+ユーザー名をアルファベットの逆順でソートします。
+
+```bash
+
+$ tail -5 /etc/passwd | sort -r
+tcpdump:x:72:72::/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
+dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
+
+```
+
+結果はユーザー名のアルファベット逆順で並んでいる。
+
+---
+
+## 3-6-4 列を指定したソート
+
+3 列目（ユーザー ID）でソートを行います。区切り文字は「:」に指定します。
+
+```bash
+
+$ tail -5 /etc/passwd | sort -k 3 -t :
+linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
+tcpdump:x:72:72::/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
+
+```
+
+文字列としてソートされるため、数値の大小順にはならず、1000 が先頭に来てしまう。
+
+---
+
+## 3-6-5 数値としてのソート
+
+3 列目（ユーザー ID）を数値としてソートするには `-n` オプションを追加します。
+
+```bash
+
+$ tail -5 /etc/passwd | sort -k 3 -t : -n
+tcpdump:x:72:72::/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
+linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
+
+```
+
+数値順にソートされ、ユーザー ID の小さい順に並ぶ。
+
+---
+
+## 3-7 行の重複の消去（uniq コマンド）
+
+`uniq` コマンドは連続する重複行を 1 行にまとめて出力します。
+
+### 3-7-1 データ作成例
+
+```bash
+
+$ cat > uniq-test
+ABACCD
+（Ctrl+d で入力終了）
+$ cat uniq-test
+ABACCD
+
+```
+
+### 3-7-2 重複行の消去
+
+```bash
+
+$ cat uniq-test | uniq
+ABACD
+
+```
+
+- 前後で連続する重複文字だけが削除される。
+
+- 先に sort すると全体の重複も削除可能。
+
+```bash
+
+$ cat uniq-test | sort | uniq
+ABCD
+
+```
+
+今度は A も重複が消去されました。
+
+---
+
+## 3-8 文字をカウントする（wc コマンド）
+
+`wc` コマンドはファイルや標準入力の文字数・行数・単語数をカウントできます。
+
+### 書式
+
+wc [オプション] [ファイル]
+
+主なオプション
+
+- -c 文字数をカウント
+
+- -l 行数をカウント
+
+- -w 単語数をカウント
+
+---
+
+## 3-8-1 文字のカウント
+
+`wc` コマンドを使うと、文字数・行数・単語数をカウントできます。
+
+- オプションなしでは、行数・単語数・文字数がまとめて表示される
+
+```bash
+
+$ cat /etc/services | wc
+11473 63129 692252
+
+```
+
+行数のみをカウント
+
+```bash
+
+$ cat /etc/services | wc -l
+11473
+
+```
+
+単語数のみをカウント
+
+```bash
+
+$ cat /etc/services | wc -w
+63129
+
+```
+
+文字数のみをカウント
+
+```bash
+
+$ cat /etc/services | wc -c
+692252
+
+```
+
+---
+
+## 3-9 grep コマンドによる文字列検索
+
+`grep` コマンドは、指定した条件に一致する文字列をファイルや標準入力から検索します。
+
+### 書式
+
+grep [オプション] 検索条件 [ファイル]
+
+正規表現の利用
+
+```bash
+
+^ : 行頭
+
+$ : 行末
+
+. : 任意の1文字
+
+* : 直前の文字の0回以上の繰り返し
+
+[ ... ] : 中の任意の1文字
+
+[^ ... ] : 中の文字以外の任意1文字
+
+\ : 正規表現の特殊文字をエスケープ
+
+```
+
+正規表現例
+
+```bash
+
+^a : 行頭が a
+
+b$ : 行末が b
+
+a.b : a と b の間に1文字
+
+[ab]ab : a または b に続く ab (aab、bab)
+
+[^ab]ab : a または b で始まらない ab (xab、zab)
+
+```
+
+---
