@@ -84,7 +84,7 @@ $ vi test.txt
 
 ```
 
-![Alt text](images/vi編集モード)
+<img src="images/vi編集モード.png" alt="Alt text" width="400">
 
 ---
 
