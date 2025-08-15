@@ -96,7 +96,7 @@ $ vi test.txt
 - 入力モードでは `BackSpace` や `Delete` で文字削除可。
 - vim では入力モード中でもカーソルキーで移動可能。
 
-![Alt text](images/%E5%85%A5%E5%8A%9B%E3%83%A2%E3%83%BC%E3%83%89.png)
+<img src="images/入力モード.png" alt="Alt text" width="400">
 
 ---
 
@@ -116,7 +116,7 @@ $ vi test.txt
 新しく作成したファイルの場合、画面左下に「“test.txt”[新] xL, xB 書込み」と表示されて、新しくファイルが作
 成されたことが分かります。
 
-![Alt text](images/%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E5%AE%8C%E4%BA%86.png)
+<img src="images/書き込み完了.png" alt="Alt text" width="400">
 
 ---
 
