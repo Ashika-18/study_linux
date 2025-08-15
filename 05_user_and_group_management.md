@@ -147,52 +147,53 @@ Aug 15 12:00:13 localhost systemd[15213]: Starting Cleanup of User's Temporary F
 
 # 5-2-5 sudo コマンドをパスワード無しで実行できるようにする
 
-    sudo コマンドの設定を変更して、パスワード無しで sudo コマンドを実行できるようにします。
-    sudo コマンドの設定は /etc/sudoers に記述されています。この設定ファイルは vi で直接修正するのではなく、visudo コマンドを実行して修正します。
+sudo コマンドの設定を変更して、パスワード無しで sudo コマンドを実行できるようにします。
+sudo コマンドの設定は /etc/sudoers に記述されています。この設定ファイルは vi で直接修正するのではなく、visudo コマンドを実行して修正します。
 
-    ```bash
+```bash
 
-    $ sudo visudo
-    [sudo] linuc のパスワード: ※ ユーザー linuc のパスワードを入力（非表示）
+$ sudo visudo
+[sudo] linuc のパスワード: ※ ユーザー linuc のパスワードを入力（非表示）
 
-    ```
+```
 
-    vi で /etc/sudoers が開けたら、以下の設定行を見つけて変更し、保存、終了します（vi の編集モードでコマンド :wq）。設定は即時有効になります。
+vi で /etc/sudoers が開けたら、以下の設定行を見つけて変更し、保存、終了します（vi の編集モードでコマンド :wq）。設定は即時有効になります。
 
-    ```bash
+```bash
 
-    Allows people in group wheel to run all commands
+Allows people in group wheel to run all commands
 
-    %wheel ALL=(ALL) ALL
+%wheel ALL=(ALL) ALL
 
-    ```
+```
 
-    行頭に「# 」を入れてコメントアウトします。
+行頭に「# 」を入れてコメントアウトします。
 
-    ```bash
+```bash
 
-    # %wheel ALL=(ALL) ALL
+# %wheel ALL=(ALL) ALL
 
-    ```
-    次のコードの意味：コメントアウトを外すと、wheel グループのユーザーは sudo 実行時に パスワード不要 で全コマンドを実行できる
+```
 
-    ```bash
+次のコードの意味：コメントアウトを外すと、wheel グループのユーザーは sudo 実行時に パスワード不要 で全コマンドを実行できる
 
-    ## Same thing without a password
+```bash
 
-    # %wheel ALL=(ALL) NOPASSWD: ALL
+## Same thing without a password
 
-    コメントアウトを外す
+# %wheel ALL=(ALL) NOPASSWD: ALL
 
-    # %wheel ALL=(ALL) NOPASSWD: ALL
+コメントアウトを外す
 
-    ```
+# %wheel ALL=(ALL) NOPASSWD: ALL
 
-    最初の設定は、wheel グループに所属している（%wheel）ユーザーは sudo コマンドを実行できるが、パスワードが必要という設定です。
-    この設定をコメントアウトして無効にしました。コメントアウトするには行頭に「# 」と記述します。
+```
 
-    次の設定は、wheel グループに所属しているすべてのユーザーは sudo コマンドを実行でき、パスワードは不要（NOPASSWD: ALL）という設定です。
-    この設定の行頭のコメントアウトを外して有効にしました。
+最初の設定は、wheel グループに所属している（%wheel）ユーザーは sudo コマンドを実行できるが、パスワードが必要という設定です。
+この設定をコメントアウトして無効にしました。コメントアウトするには行頭に「# 」と記述します。
 
-    前の sudo コマンド実行から 5 分以上時間をあけて、再度 sudo コマンドを実行してみてください。
-    パスワード入力無しで実行できるようになっています。
+次の設定は、wheel グループに所属しているすべてのユーザーは sudo コマンドを実行でき、パスワードは不要（NOPASSWD: ALL）という設定です。
+この設定の行頭のコメントアウトを外して有効にしました。
+
+前の sudo コマンド実行から 5 分以上時間をあけて、再度 sudo コマンドを実行してみてください。
+パスワード入力無しで実行できるようになっています。
