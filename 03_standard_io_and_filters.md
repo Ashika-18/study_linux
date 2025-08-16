@@ -285,6 +285,8 @@ $ less < ls-etc-mix
 
 - このデータの流れは「テキストストリーム」と呼ばれる
 
+<img src="images/パイプの画像.png" alt="Top picture" width="600">
+
 ---
 
 ## 3-4-1 less コマンドによるページング
