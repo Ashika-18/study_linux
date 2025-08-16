@@ -85,7 +85,7 @@ UTM 上に自分で AlmaLinux をインストールした場合、`httpd` は標
 
 ---
 
-<img src="images/top_pic.png" alt="Top picture" width="600">
+<img src="images/top_picture.png" alt="Top picture" width="600">
 
 ## 1-3 ターミナルを使った基本操作の準備
 
