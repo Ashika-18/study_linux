@@ -85,7 +85,7 @@ UTM 上に自分で AlmaLinux をインストールした場合、`httpd` は標
 
 ---
 
-![Alt text](images/top_pic.png)
+<img src="images/top_pic.png" alt="Top picture" width="600">
 
 ## 1-3 ターミナルを使った基本操作の準備
 
@@ -139,7 +139,7 @@ Linux マシンが手元にない場合、SSH でリモートログインして�
 
 事前に Linux で ip a コマンドを実行し、ログイン先の IP アドレスを確認する
 
-![Alt text](images/ip_a1.png)
+<img src="images/ip_a1.png" alt="IP address example" width="600">
 
 仮想マシンにはネットワークアダプターが 2 つ設定されている
 
