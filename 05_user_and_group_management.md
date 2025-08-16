@@ -223,7 +223,7 @@ Allows people in group wheel to run all commands
 
 コメントアウトを外す
 
-# %wheel ALL=(ALL) NOPASSWD: ALL
+ %wheel ALL=(ALL) NOPASSWD: ALL
 
 ```
 
