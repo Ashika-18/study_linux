@@ -224,7 +224,7 @@ default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100
 
 ```
 
-<img src="images/ルーティングの例.png" alt="ルーティング設定例" width="600">
+<img src="images/routing.png" alt="ルーティング設定例" width="600">
 
 - 1 行目: デフォルトゲートウェイが 10.0.2.2、通信には enp0s3 を使用。
 
