@@ -54,7 +54,6 @@
 ## 注意
 
 - M1/M2 Mac では **x86_64 版は動かない** ので必ず `aarch64` を選択
-- インストール後は CD/DVD ドライブから ISO を外すこと
 
 ---
 
@@ -64,9 +63,11 @@
 
 2. 「仮想マシンの作成」画面で以下を設定
 
-   - エミュレーターの種類: `Virtualize`（Apple Silicon の場合）
+   - 仮想化を選ぶ
    - Operating System: `Linux`
    - 名前: `AlmaLinux`（任意）
+   - 「Apple 仮想化を使用」を選ぶ
+     (Apple Silicon Mac（M1 / M2）で UTM を使う場合)
 
 3. メモリ: 2048MB（2GB）以上推奨
 4. CPU コア数: 2 コア以上推奨
