@@ -37,11 +37,20 @@
 ## ダウンロード手順
 
 1. AlmaLinux 公式ミラー一覧ページへアクセス
+
    - https://mirrors.almalinux.org/isos.html
-2. バージョン **9.6** を選択
-3. `aarch64` ディレクトリに進む
+
+2. `aarch64` ディレクトリの version **9.6** を選択
+
+<img src="images/%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B39.6.png" alt="version9.6" width="600">
+
+3. JP のリンクを選ぶ(基本的にどれでも問題は無い)
+
+<img src="images/JPのリンク.png" alt="JPのリンク" width="600">
+
 4. `AlmaLinux-9.6-aarch64-dvd.iso` をダウンロード
 
+<img src="images/AlmaLinux-9.6-aarch64-dvd.isoを選ぶ.png" alt="AlmaLinux-9.6-aarch64-dvd.iso" width="600">
 ## 注意
 
 - M1/M2 Mac では **x86_64 版は動かない** ので必ず `aarch64` を選択
