@@ -100,6 +100,8 @@
 
 2. 仮想マシンが起動し、ISO からインストール画面が表示される
 
+- 真ん中の Test this install AlmaLinux 9.6 で enter
+
 <image src="images/Linuxのインストール.png" alt="Linux" width="600">
 
 3. インストールウィザードの指示に従い、言語やキーボード、タイムゾーンを設定
