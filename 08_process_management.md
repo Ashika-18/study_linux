@@ -1,4 +1,8 @@
-# 8 章 プロセス管理（要約）
+# 8 章 プロセス管理
+
+---
+
+## 📚 [全体の目次に戻る](README.md)
 
 Linux のシステムは、多数のプログラムが同時に動作し、それらを「プロセス」として管理します。本章では、プロセスの基本概念、確認方法、制御方法について学びます。
 
@@ -373,5 +377,13 @@ $   # Enter キーを押すと結果が表示される
 kill -9 プロセスID
 
 ```
+
+---
+
+◀ [前の章へ](03_standard_io_and_filters.md) | 📚 [全体の目次](README.md) | [次の章へ](05_user_and_group_management.md) ▶
+
+---
+
+◀ [7 章へ](07_network_configuration_and_management.md) | 📚 [全体の目次](README.md)
 
 ---

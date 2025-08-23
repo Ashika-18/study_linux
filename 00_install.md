@@ -2,6 +2,10 @@
 
 ## 1. UTM のダウンロードとインストール
 
+---
+
+## 📚 [全体の目次に戻る](README.md)
+
 1. UTM 公式サイトにアクセス  
    [https://mac.getutm.app/](https://mac.getutm.app/)
 
