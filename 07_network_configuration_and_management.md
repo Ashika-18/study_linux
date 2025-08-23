@@ -2,7 +2,7 @@
 
 ---
 
-## 📚 [全体の目次に戻る](README.md)
+## 📚 [全体の目次に戻る](README.md#各章リンク)
 
 Linux はサーバー用途で利用されることが多く、ネットワーク接続が重要になります。本章では、ネットワーク接続に必要な基礎知識、確認コマンド、設定方法について学びます。
 
@@ -242,6 +242,6 @@ default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100
 
 ---
 
-◀ [6 章へ](06_file_ownership_and_groups.md) | 📚 [全体の目次](README.md) | [8 章へ](08_process_management.md) ▶
+◀ [6 章へ](06_file_ownership_and_groups.md) | 📚 [全体の目次](README.md#各章リンク) | [8 章へ](08_process_management.md) ▶
 
 ---

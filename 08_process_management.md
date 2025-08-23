@@ -2,7 +2,7 @@
 
 ---
 
-## 📚 [全体の目次に戻る](README.md)
+## 📚 [全体の目次に戻る](README.md#各章リンク)
 
 Linux のシステムは、多数のプログラムが同時に動作し、それらを「プロセス」として管理します。本章では、プロセスの基本概念、確認方法、制御方法について学びます。
 
@@ -384,6 +384,6 @@ kill -9 プロセスID
 
 ---
 
-◀ [7 章へ](07_network_configuration_and_management.md) | 📚 [全体の目次](README.md)
+◀ [7 章へ](07_network_configuration_and_management.md) | 📚 [全体の目次](README.md#各章リンク)
 
 ---

@@ -2,7 +2,7 @@
 
 ---
 
-## 📚 [全体の目次に戻る](README.md)
+## 📚 [全体の目次に戻る](README.md#各章リンク)
 
 Linux はマルチユーザー OS であるため、セキュリティ保護の観点からファイルやディレクトリにはアクセス制御が必要です。  
 アクセス制御は「所有者」や「所有グループ」、それぞれに設定される **アクセス権** によって実現されます。
@@ -457,6 +457,6 @@ touch: 'testdir/test2' に touch できません: 許可がありません
 
 ---
 
-◀ [5 章へ](05_user_and_group_management.md) | 📚 [全体の目次](README.md) | [7 章へ](07_network_configuration_and_management.md) ▶
+◀ [5 章へ](05_user_and_group_management.md) | 📚 [全体の目次](README.md#各章リンク) | [7 章へ](07_network_configuration_and_management.md) ▶
 
 ---
