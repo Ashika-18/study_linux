@@ -44,16 +44,17 @@
 
 ---
 
-## 各章リンク（任意で作成）
+## 各章リンク
 
+- [0 章 インストール](00_install.md)
 - [1 章 基本操作](01_getting_started_linux.md)
-- [2 章 ファイル操作](.md)
-- [3 章 テキスト操作](3章-テキスト操作.md)
-- [4 章 権限とユーザー管理](4章-権限ユーザー.md)
-- [5 章 プロセス管理とジョブ制御](5章-プロセス.md)
-- [6 章 システム管理](6章-システム.md)
-- [7 章 ネットワーク基礎](7章-ネットワーク.md)
-- [8 章 プロセス管理詳細](8章-プロセス管理.md)
+- [2 章 ファイル操作](02_basic_commands.md)
+- [3 章 テキスト操作](03_standard_io_and_filters.md)
+- [4 章 権限とユーザー管理](04_vi_editor.md)
+- [5 章 プロセス管理とジョブ制御](05_user_and_group_management.md)
+- [6 章 システム管理](06_file_ownership_and_groups.md)
+- [7 章 ネットワーク基礎](07_network_configuration_and_management.md)
+- [8 章 プロセス管理詳細](08_process_management.md)
 
 ---
 
