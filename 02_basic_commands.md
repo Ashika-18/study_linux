@@ -123,7 +123,7 @@ Linux での基本操作は **ファイルやディレクトリの操作** が�
   - `?`：任意の 1 文字に一致  
      例： - `/etc/*.conf` → `.conf`で終わる全ファイルを表示 - `/etc/???.conf` → ファイル名が 3 文字＋`.conf`のものを表示
 
-  <image src="conf で終わるファイル.png"Alt=".conf"width="600">
+  <img src="images/confで終わるファイル.png" alt="confで終わるファイル.png" width="600">
 
 ---
 
