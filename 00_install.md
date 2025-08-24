@@ -4,7 +4,7 @@
 
 ---
 
-## 📚 [全体の目次に戻る](README.md)
+## 📚 [全体の目次に戻る](README.md#各章リンク)
 
 1. UTM 公式サイトにアクセス  
    [https://mac.getutm.app/](https://mac.getutm.app/)
@@ -100,7 +100,7 @@
 
 2. 仮想マシンが起動し、ISO からインストール画面が表示される
 
-- 真ん中の Test this install AlmaLinux 9.6 で enter
+- 上から２段目の Test this install AlmaLinux 9.6 で enter
 
 <image src="images/Linuxのインストール.png" alt="Linux" width="600">
 
@@ -142,3 +142,9 @@
 - VirtIO ドライブは高速で安定した仮想ストレージとして推奨です
 - USB ドライブは外部ストレージ用途で使われます
 - インストール後は必ず ISO を外して、仮想ディスクから起動するようにしてください
+
+---
+
+📚 [全体の目次](README.md#各章リンク) | [1 章へ](01_getting_started_linux.md) ▶
+
+---
