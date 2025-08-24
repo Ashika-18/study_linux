@@ -113,9 +113,18 @@ systemctl start httpd コマンドで起動できる
 
 実行時に管理者権限の確認でユーザーのパスワード入力が求められる（管理者権限を持つユーザーでログインしている必要がある）
 
+起動後、アクティビティから Firefox を起動し、アドレスバーに `localhost` を入力して接続を確認できる。
+
+<img src="images/検索バーにlocalhost
+.png" alt="検索バー" width="600">
+
+<img src="images/testページ.png" alt="Testページ" width="600">
+
 ## 1-4-2 起動確認とコマンド履歴の活用
 
 起動後は systemctl status httpd コマンドでサービスの状態を確認する
+
+<img src="images/statusコマンド.png" alt="Top picture" width="600">
 
 コマンド履歴機能を使うと、以前実行したコマンドを上下カーソルキーで呼び出せる
 
