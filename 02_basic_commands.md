@@ -118,11 +118,12 @@ Linux での基本操作は **ファイルやディレクトリの操作** が�
   <image src="images/オプションの同時指定.png" alt="オプション" width="600">
 
 - **ワイルドカードによる絞り込み**
+
   - `*`：0 文字以上に一致
   - `?`：任意の 1 文字に一致  
      例： - `/etc/*.conf` → `.conf`で終わる全ファイルを表示 - `/etc/???.conf` → ファイル名が 3 文字＋`.conf`のものを表示
 
-    <image src="conf で終わるファイル.png"Alt=".conf"width="600">
+  <image src="conf で終わるファイル.png"Alt=".conf"width="600">
 
 ---
 
