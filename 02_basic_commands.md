@@ -138,11 +138,11 @@ Linux での基本操作は **ファイルやディレクトリの操作** が�
 
     - `cat ~/.bashrc` → ファイル内容をそのまま表示
 
-    <image src="catでファイル内容.png" alt="" width="">
+    <img src="images/catでファイル内容.png" alt="catでファイル内容.png" width="600">
 
     - `cat -n ~/.bashrc` → 行番号付きで表示
 
-    <image src="-n で番号付き.png" alt="" width="">
+    <img src="images/-n で番号付き.png" alt="-n で番号付き.png" width="600">
 
 ---
 
