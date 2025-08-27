@@ -164,8 +164,8 @@ systemctl [オプション] サブコマンド ユニット
 
 $ ls -l
 合計 0
-drwxr-xr-x. 2 linuc linuc 6  8月10 15:09 ダウンロード   10 15:09
-# ディレクトリ / 権限=rwxr-xr-x / 所有者=linuc / グループ=linuc / サイズ=6 / 更新日時=8月
+drwxr-xr-x. 2 linuc linuc 6  8月10 15:09 ダウンロード
+# ディレクトリ / 権限=rwxr-xr-x / 所有者=linuc / グループ=linuc / サイズ=6 / 更新日時=8月10 15:09
 
 drwxr-xr-x. 2 linuc linuc 6  8月10 15:09 テンプレート
 # ディレクトリ / 権限=rwxr-xr-x / 所有者=linuc / グループ=linuc / サイズ=6 / 更新日時=8月10 15:09
