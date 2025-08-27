@@ -412,10 +412,15 @@ sort [オプション] [ファイル]
 ```bash
 
 $ tail -5 /etc/passwd
+
 sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+
 chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
+
 dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+
 tcpdump:x:72:72::/:/sbin/nologin
+
 linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
 
 ```
@@ -431,10 +436,15 @@ linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
 ```bash
 
 $ tail -5 /etc/passwd | sort
+
 chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
+
 dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+
 linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
+
 sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+
 tcpdump:x:72:72::/:/sbin/nologin
 
 ```
@@ -450,10 +460,15 @@ tcpdump:x:72:72::/:/sbin/nologin
 ```bash
 
 $ tail -5 /etc/passwd | sort -r
+
 tcpdump:x:72:72::/:/sbin/nologin
+
 sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+
 linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
+
 dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+
 chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
 
 ```
@@ -469,10 +484,15 @@ chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
 ```bash
 
 $ tail -5 /etc/passwd | sort -k 3 -t :
+
 linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
+
 tcpdump:x:72:72::/:/sbin/nologin
+
 sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+
 dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+
 chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
 
 ```
@@ -488,10 +508,15 @@ chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
 ```bash
 
 $ tail -5 /etc/passwd | sort -k 3 -t : -n
+
 tcpdump:x:72:72::/:/sbin/nologin
+
 sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/usr/sbin/nologin
+
 dnsmasq:x:981:980:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+
 chrony:x:982:981:chrony system user:/var/lib/chrony:/sbin/nologin
+
 linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
 
 ```
@@ -509,9 +534,12 @@ linuc:x:1000:1000:LinuC:/home/linuc:/bin/bash
 ```bash
 
 $ cat > uniq-test
+
 ABACCD
 （Ctrl+d で入力終了）
+
 $ cat uniq-test
+
 ABACCD
 
 ```
@@ -521,6 +549,7 @@ ABACCD
 ```bash
 
 $ cat uniq-test | uniq
+
 ABACD
 
 ```
@@ -532,6 +561,7 @@ ABACD
 ```bash
 
 $ cat uniq-test | sort | uniq
+
 ABCD
 
 ```
@@ -567,6 +597,7 @@ wc [オプション] [ファイル]
 ```bash
 
 $ cat /etc/services | wc
+
 11473 63129 692252
 
 ```
@@ -576,6 +607,7 @@ $ cat /etc/services | wc
 ```bash
 
 $ cat /etc/services | wc -l
+
 11473
 
 ```
@@ -585,6 +617,7 @@ $ cat /etc/services | wc -l
 ```bash
 
 $ cat /etc/services | wc -w
+
 63129
 
 ```
@@ -594,6 +627,7 @@ $ cat /etc/services | wc -w
 ```bash
 
 $ cat /etc/services | wc -c
+
 692252
 
 ```
@@ -657,13 +691,21 @@ a.b : a と b の間に1文字
     cat /etc/services | grep http`
 
     # http :// www.iana.org/assignments/port-numbers
+
     http 80/ tcp www www-http # WorldWideWeb HTTP
+
     http 80/ udp www www-http # HyperText Transfer Protocol
+
     http 80/ sctp # HyperText Transfer Protocol
+
     https 443/ tcp # http protocol over TLS/SSL
+
     https 443/ udp # http protocol over TLS/SSL
+
     https 443/ sctp # http protocol over TLS/SSL
+
     gss-http 488/ tcp
+
     gss-http 488/ udp
 
     ```
@@ -679,12 +721,19 @@ a.b : a と b の間に1文字
     cat /etc/services | grep ^http
 
     http 80/ tcp www www-http # WorldWideWeb HTTP
+
     http 80/ udp www www-http # HyperText Transfer Protocol
+
     http 80/ sctp # HyperText Transfer Protocol
+
     https 443/ tcp # http protocol over TLS/SSL
+
     https 443/ udp # http protocol over TLS/SSL
+
     https 443/ sctp # http protocol over TLS/SSL
+
     http-mgmt 280/ tcp # http-mgmt
+
     http-mgmt 280/ udp # http-mgmt
 
   ```
@@ -700,12 +749,19 @@ a.b : a と b の間に1文字
     cat /etc/services | grep http$
 
     md-cg-http 2688/ tcp # md-cf-http
+
     md-cg-http 2688/ udp # md-cf-http
+
     webemshttp 2851/ tcp # webemshttp
+
     webemshttp 2851/ udp # webemshttp
+
     plysrv-http 6770/ tcp # PolyServe http
+
     plysrv-http 6770/ udp # PolyServe http
+
     manyone-http 8910/ tcp # manyone-http
+
     manyone-http 8910/ udp # manyone-http
 
   ```
