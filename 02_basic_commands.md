@@ -194,10 +194,14 @@ drwxr-xr-x. 2 linuc linuc 6  8月10 15:09 テンプレート
 ```bash
 
 $ ls -la
+
 合計 24
 drwx------. 14 linuc linuc 4096  8月10 15:09 .
+
 drwxr-xr-x.  3 root  root    19  8月10 15:05 ..
+
 -rw-r--r--.  1 linuc linuc   18  4月30 23:14 .bash_logout
+
 -rw-r--r--.  1 linuc linuc  141  4月30 23:14 .bash_profile
 
 ```
@@ -225,8 +229,11 @@ drwxr-xr-x.  3 root  root    19  8月10 15:05 ..
 ```bash
 
 $ ls -la
+
 $ ls -al
+
 $ ls -l -a
+
 $ ls -a -l
 
 ```
@@ -267,7 +274,7 @@ DIR_COLORS.lightbgcolor  groff  pnm2ppa.conf
 
 ```bash
 
-$ ls /etc/*.conf
+$ ls /etc /*. conf
 anthy-unicode.conf  kdump.conf  nsswitch.conf  sysctl.conf
 appstream.conf      krb5.conf   pbm2ppa.conf   updatedb.conf
 ...
@@ -374,7 +381,9 @@ less /etc/services
 touch ファイル名
 
 $ touch test
+
 $ ls -l test
+
 -rw-r--r--. 1 linuc linuc 0 8月18 10:41 test
 
 ```
@@ -416,15 +425,25 @@ $ pwd
 
 ```bash
 $ pwd
+
 /home/linuc
+
 $ cd /usr
+
 $ pwd
+
 /usr
+
 $ cd
+
 $ pwd
+
 /home/linuc
+
 $ cd -
+
 $ pwd
+
 /usr
 
 ```
@@ -462,11 +481,17 @@ dir1 の下にディレクトリ dir2 を作成しますが、mkdir コマンド
 ```bash
 
 $ cd
+
 $ pwd
+
 /home/linuc
+
 $ mkdir dir1
+
 $ mkdir dir1/dir2
+
 $ ls -R dir1
+
 dir1:
 dir2
 
@@ -480,7 +505,9 @@ mkdir コマンドに -p オプションを付けて実行すると次のよう�
 
 $ mkdir dir3/dir4
 mkdir: ディレクトリ `dir3/dir4` を作成できません: そのようなファイルやディレクトリはありません
+
 $ mkdir -p dir3/dir4
+
 $ ls -R dir3
 dir3:
 dir4
@@ -517,13 +544,19 @@ rmdir ディレクトリ名
 ```bash
 
 $ ls
+
 dir1 ダウンロード デスクトップ ビデオ 画像
 dir3 テンプレート ドキュメント 音楽 公開
+
 $ ls -R dir1
+
 dir1:
 dir2
+
 dir1/dir2:
+
 $ rmdir dir1
+
 rmdir: 'dir1' を削除できません: ディレクトリは空ではありません
 
 ```
@@ -533,7 +566,9 @@ rmdir -p コマンドを使うと、空のディレクトリ階層を一括で�
 ```bash
 
 $ rmdir -p dir1/dir2
+
 $ ls
+
 dir3 テンプレート ドキュメント 音楽 公開 ダウンロード デスクトップ ビデオ 画像
 
 ```
@@ -553,9 +588,12 @@ dir2 と一緒に dir1 も削除されました。
 
 ```bash
 $ touch dir3/dir4/test
+
 $ ls -R dir3
+
 dir3:
 dir4
+
 dir3/dir4:
 test
 
@@ -566,6 +604,7 @@ rmdir -p dir3/dir4 を実行すると、dir4 内にファイルがあるため�
 ```bash
 
 $ rmdir -p dir3/dir4
+
 rmdir: 'dir3/dir4' を削除できません: ディレクトリは空ではありません
 
 ```
@@ -575,7 +614,9 @@ rmdir: 'dir3/dir4' を削除できません: ディレクトリは空ではあ�
 ```bash
 
 $ rm -r dir3
+
 $ ls
+
 テンプレート ドキュメント 音楽 公開 ダウンロード デスクトップ ビデオ 画像
 
 ```
@@ -627,22 +668,30 @@ Linux では特別な意味を持つディレクトリや記号があり、パ�
 
 # ホームディレクトリに移動
 $ cd ~
+
 $ pwd
+
 /home/linuc
 
 # 相対指定で親ディレクトリへ
 $ cd ..
+
 $ pwd
+
 /home
 
 # 絶対指定で /usr/bin へ
 $ cd /usr/bin
+
 $ pwd
+
 /usr/bin
 
 # 相対指定でルートディレクトリへ
 $ cd ../../
+
 $ pwd
+
 /
 
 ```
@@ -671,10 +720,14 @@ cp [オプション] コピー元 コピー先
 ```bash
 
 $ cd ~
+
 $ mkdir work
+
 $ cp /etc/hosts /home/linuc/work
+
 $ ls -l /etc/hosts
 -rw-r--r--. 1 root root 158 6月23 2020 /etc/hosts
+
 $ ls -l work
 
 合計 4
@@ -744,12 +797,17 @@ $ ls -l
 ```bash
 
 $ mkdir moto
+
 $ touch moto/cptest
+
 $ ls moto
+
 cptest
 
 $ cp -r moto saki
+
 $ ls saki
+
 cptest
 
 ```
@@ -759,8 +817,11 @@ cptest
 ```bash
 
 $ mkdir aru
+
 $ cp -r moto aru
+
 $ ls -R aru
+
 aru:
 moto
 
@@ -791,36 +852,29 @@ mv 移動元 移動先
 
 ---
 
-### 2-11-1 ファイルを別のディレクトリに移動
+### 2-7-1 ファイルを別のディレクトリに移動
 
 ```bash
 
 $ touch moto/mvtest
+
 $ ls moto
+
 cptest mvtest
+
 $ mv moto/mvtest saki
+
 $ ls moto
+
 cptest
+
 $ ls saki
+
 cptest mvtest
 
 ```
 
 moto ディレクトリ内の mvtest ファイルが saki ディレクトリに移動したことが確認できます。
-
----
-
-### 2-7-1 ディレクトリを別のディレクトリに移動
-
-```bash
-
-$ mv moto saki
-$ ls saki
-cptest moto mvtest
-
-```
-
-moto ディレクトリが saki ディレクトリ内に移動したことがわかります。
 
 ---
 
@@ -836,7 +890,9 @@ moto ディレクトリが saki ディレクトリ内に移動したことがわ
 ```bash
 
 $ mv moto saki
+
 $ ls saki
+
 cptest  moto  mvtest
 
 ```
