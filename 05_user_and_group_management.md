@@ -144,11 +144,15 @@ $ id linuc
 uid=1000(linuc) gid=1000(linuc) groups=1000(linuc),10(wheel)
 
 $ tail /var/log/messages
+
 tail: '/var/log/messages' を読み込み用に開くことが出来ません: 許可がありません
 
 $ sudo tail /var/log/messages
+
 [sudo] linuc のパスワード:
+
 Aug 15 12:00:13 localhost systemd[15213]: Created slice User Background Tasks Slice.
+
 Aug 15 12:00:13 localhost systemd[15213]: Starting Cleanup of User's Temporary Files and Directories ...
 
 ```
@@ -181,6 +185,7 @@ Aug 15 12:00:13 localhost systemd[15213]: Starting Cleanup of User's Temporary F
 
     $ id
     uid=1000(linuc) gid=1000(linuc) groups=1000(linuc),10(wheel)
+
     context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
 ```
 
@@ -276,9 +281,13 @@ useradd ユーザー名
 ```bash
 
 $ sudo useradd sato
+
 $ grep sato /etc/passwd
+
 sato:x:1001:1001::/home/sato:/bin/bash
+
 $ ls -ld /home/sato
+
 drwx------. 3 sato sato 78 8月15 14:03 /home/sato
 
 ```
@@ -302,9 +311,13 @@ passwd [ユーザー名]
 ```bash
 
 $ sudo passwd sato
+
 ユーザー sato のパスワードを変更。
+
 新しいパスワード:        # 入力（非表示）
+
 新しいパスワードを再入力してください:  # 再入力（非表示）
+
 passwd: すべての認証トークンが正しく更新できました。
 
 ```
@@ -331,8 +344,11 @@ passwd: すべての認証トークンが正しく更新できました。
 ```bash
 
 $ sudo passwd root
+
 新しいパスワード:        # 入力（非表示）
+
 新しいパスワードを再入力してください: # 再入力（非表示）
+
 passwd: すべての認証トークンが正しく更新できました。
 
 ```
@@ -375,8 +391,11 @@ uid=0(root) gid=0(root) groups=0(root)
 ```bash
 
 usermod ユーザー名
+
   -g グループ   # プライマリグループを変更
+
   -G グループ   # サブグループを変更（カンマ区切りで複数指定）
+
   -a            # -G と併用して既存グループを維持しつつ追加
 
 ```
@@ -397,7 +416,9 @@ uid=1001(sato) gid=1001(sato) groups=1001(sato)
 ```bash
 
 $ sudo usermod -G wheel sato
+
 $ id sato
+
 uid=1001(sato) gid=1001(sato) groups=1001(sato),10(wheel)
 
 ```
@@ -407,7 +428,9 @@ uid=1001(sato) gid=1001(sato) groups=1001(sato),10(wheel)
 ```bash
 
 $ sudo usermod -G kvm -a sato
+
 $ id sato
+
 uid=1001(sato) gid=1001(sato) groups=1001(sato),10(wheel),36(kvm)
 
 ```
@@ -443,9 +466,13 @@ userdel ユーザー名
 ```bash
 
 $ sudo useradd test
+
 $ id test
+
 uid=1002(test) gid=1002(test) groups=1002(test)
+
 $ ls -ld /home/test
+
 drwx------. 3 test test 78 8月15 14:29 /home/test
 
 
@@ -456,9 +483,13 @@ drwx------. 3 test test 78 8月15 14:29 /home/test
 ```bash
 
 $ sudo userdel -r test
+
 $ id test
+
 id: 'test': no such user
+
 $ ls -ld /home/test
+
 ls: '/home/test' にアクセスできません: そのようなファイルやディレクトリはありません
 
 
@@ -515,6 +546,7 @@ $ sudo usermod -G test -a sato
 ```bash
 
 $ grep test /etc/group
+
 test:x:1002:sato
 
 ```
@@ -547,6 +579,7 @@ groupdel グループ名
 ```bash
 
 $ sudo groupdel test
+
 $ grep test /etc/group
 # 何も表示されない（削除済み）
 
@@ -558,6 +591,7 @@ $ grep test /etc/group
 ```bash
 
 $ sudo groupdel linuc
+
 groupdel: ユーザー 'linuc' のプライマリグループは削除できません
 
 ```
