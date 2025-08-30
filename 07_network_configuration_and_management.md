@@ -47,13 +47,17 @@ ip a[ddress] [インターフェース]
 
 $ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 ...
+
     inet 127.0.0.1/8 scope host lo
+
     inet6 ::1/128 scope host
 
 2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 ...
+
     inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic
 
 3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 ...
+
     inet 192.168.56.3/24 brd 192.168.56.255 scope global dynamic
 
 
@@ -120,12 +124,17 @@ $ ip a
   ```bash
 
   $ ping linuc.org
+
   PING linuc.org (219.94.236.161) ...
+
   64 bytes from 219.94.236.161: icmp_seq=1 ttl=255 time=16.3 ms
+
   64 bytes from 219.94.236.161: icmp_seq=2 ttl=255 time=15.7 ms
+
   ^C
   --- linuc.org ping statistics ---
   2 packets transmitted, 2 received, 0% packet loss
+
   rtt min/avg/max/mdev = 15.668/15.991/16.315/0.323 ms
 
   ```
@@ -189,7 +198,9 @@ $ ip a
 ```bash
 
 $ cat /etc/resolv.conf
+
 nameserver 10.0.2.3
+
 nameserver fd00::3
 
 ```
@@ -222,8 +233,11 @@ nameserver fd00::3
 ```bash
 
 $ ip route
+
 default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100
+
 10.0.2.0/24 dev enp0s3 proto kernel scope link src 10.0.2.15 metric 100
+
 192.168.56.0/24 dev enp0s8 proto kernel scope link src 192.168.56.3 metric 101
 
 ```
