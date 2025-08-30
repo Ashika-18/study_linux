@@ -380,7 +380,7 @@ kill -9 プロセスID
 
 ---
 
-◀ [前の章へ](03_standard_io_and_filters.md) | 📚 [全体の目次](README.md) | [次の章へ](05_user_and_group_management.md) ▶
+◀ [前の章へ](03_standard_io_and_filters.md) | 📚 [全体の目次](README.md#各章リンク) | [次の章へ](05_user_and_group_management.md) ▶
 
 ---
 
