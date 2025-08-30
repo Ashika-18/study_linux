@@ -274,14 +274,14 @@ DIR_COLORS.lightbgcolor  groff  pnm2ppa.conf
 
 ```bash
 
-$ ls /etc /*. conf
+$ ls /etc/*.conf
 anthy-unicode.conf  kdump.conf  nsswitch.conf  sysctl.conf
 appstream.conf      krb5.conf   pbm2ppa.conf   updatedb.conf
 ...
 
 ```
 
-- \*.conf と指定すると .conf で終わるファイルだけ が表示される
+- ＊.conf と指定すると .conf で終わるファイルだけ が表示される
 
 #### ファイル名の文字数で絞り込む
 
