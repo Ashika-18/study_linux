@@ -50,9 +50,9 @@
 - [1 章 基本操作](01_getting_started_linux.md)
 - [2 章 ファイル操作](02_basic_commands.md)
 - [3 章 テキスト操作](03_standard_io_and_filters.md)
-- [4 章 権限とユーザー管理](04_vi_editor.md)
-- [5 章 プロセス管理とジョブ制御](05_user_and_group_management.md)
-- [6 章 システム管理](06_file_ownership_and_groups.md)
+- [4 章 vi エディタ](04_vi_editor.md)
+- [5 章 ユーザーとグループの管理](05_user_and_group_management.md)
+- [6 章 ファイルやディレクトリのアクセス制御](06_file_ownership_and_groups.md)
 - [7 章 ネットワーク基礎](07_network_configuration_and_management.md)
 - [8 章 プロセス管理詳細](08_process_management.md)
 
