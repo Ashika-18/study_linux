@@ -296,7 +296,7 @@ $ less < ls-etc-mix
 
 - このデータの流れは「テキストストリーム」と呼ばれる
 
-<img src="images/パイプ.png" alt="パイプ画像" width="600">
+<img src="images/pipe%E7%94%BB%E5%83%8F.png" alt="パイプ画像" width="600">
 
 ---
 
