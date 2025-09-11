@@ -289,6 +289,9 @@ $ grep sato /etc/passwd
 
 sato:x:1001:1001::/home/sato:/bin/bash
 
+ユーザーsato は、sato グループに所属し、ホームディレクトリとして/home/sato が作成されて割り当てられて
+いるのがわかります
+
 $ ls -ld /home/sato
 
 drwx------. 3 sato sato 78 8月15 14:03 /home/sato
