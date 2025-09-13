@@ -460,8 +460,7 @@ uid=1001(sato) gid=1001(sato) groups=1001(sato),10(wheel),36(kvm)
 
 ```bash
 
-userdel ユーザー名
-  -r   # ホームディレクトリを削除
+userdel ユーザー名 -r   # ホームディレクトリを削除
 
 ```
 
